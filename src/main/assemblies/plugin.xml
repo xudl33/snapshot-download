@@ -1,0 +1,30 @@
+<?xmlversion="1.0"?>
+<assembly>
+    <id>SnapshotDownloadPlugin</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <files>
+        <file>
+            <source>${basedir}/src/main/resources/plugin-descriptor.properties</source>
+            <outputDirectory/>
+            <filtered>true</filtered>
+        </file>
+        <file>
+            <source>${basedir}/src/main/resources/plugin-security.policy</source>
+            <outputDirectory/>
+            <filtered>true</filtered>
+        </file>
+    </files>
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>/</outputDirectory>
+            <useProjectArtifact>true</useProjectArtifact>
+            <useTransitiveFiltering>true</useTransitiveFiltering>
+            <excludes>
+                <exclude>org.elasticsearch:elasticsearch</exclude>
+            </excludes>
+        </dependencySet>
+    </dependencySets>
+</assembly>
